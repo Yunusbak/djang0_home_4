@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>{{ car.name }}</title>
+</head>
+<body>
+    <img src="{{ car.image.url }}"/><br>
+    <h1>{{ car title }}</h1>
+    <p><strong>name:</strong> {{ car.name }}</p>
+    <p><strong>company:</strong> {{ car.company }}</p>
+    <p><strong>year:</strong> {{ car.year }}</p>
+    <p><strong>company:</strong> {{ car.price }}</p>
+    
+    <a href="{% url 'car_edit' car.pk %}">edit</a>
+    <form action="{% url 'book_delete' car.pk %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+    <a href="{% url 'cars_page' %}">Back to home</a>
+</body>
+</html>

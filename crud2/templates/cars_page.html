@@ -1,0 +1,12 @@
+<head>
+    <title>Cars</title>
+</head>
+<body>
+    <h1>Cars List</h1>
+    <ul>
+        {% for book in books %}
+            <li><a href="{% url 'car_title' Car.pk %}">{{ Cars.name }}</a> by {{ Cars.year }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'car_create' %}">Add New Car</a>
+</body>
